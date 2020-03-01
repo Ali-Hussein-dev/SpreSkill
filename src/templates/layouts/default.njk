@@ -1,0 +1,13 @@
+<!doctype html>
+<html lang="en">
+<head>
+{% include "includes/head.njk" %}
+    {% block customMetaTags %} {% endblock %}
+</head>
+<body>
+    {% include "includes/header.njk" -%}
+        {% block content %} {% endblock %}
+    {% include "includes/footer.njk" %}
+    {% include "includes/scripts.njk" -%}
+</body>
+</html>
