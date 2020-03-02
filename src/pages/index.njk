@@ -1,0 +1,86 @@
+{% extends "layouts/default.njk" %}
+
+{% block customMetaTags %}
+<!-- customMetaTags -->
+    <meta name="description" 
+            content="Just relying on learning grammar and vocabularies won't make you speak fluently and clearly. Level up now your fluency level using advanced speech recognition technology">
+    <meta name="keywords"
+            content="Learn German, improve pronunciation, speak, mobile, speak German, pronunciation, accent reduction">
+    <meta name="robots"
+            content="INDEX,FOLLOW">
+{% endblock %}
+
+{% set page = "home" %}
+{% block content %}
+<main id="main">
+    <section class="container">
+            <div class="row justify-content-lg-between align-items-lg-center py-1">
+                <div class="col-lg-6 col-xl-5 mb-4 text-center text-lg-left">
+                    <h1 class="display-6 mb-3 font-weight-bold">SpreSkill<br>Your German Fluency App</h1>
+                    <p class="lead mb-3">Just relying on learning grammar and vocabularies won't make you speak fluently and clearly. Level up now your fluency level using advanced speech recognition technology</p>
+                    </a>
+                    <a 
+                    class="btn btn-pill btn-secondary btn-block d-md-inline-block w-auto mx-1 ml-sm-0 my-3" 
+                    href="https://play.google.com/store/apps/details?id=com.app.spreskill&referrer=utm_source%3L-Page%26utm_medium%3DD-button" 
+                    role="button" 
+                    target="_blank">
+                        <i class="fab fa-google-play fa-lg mr-1" aria-hidden="true"></i>
+                        <span>Google Play</span>
+                    </a>
+                </div>
+                <div class="col-lg-6 col-xl-7">
+                    <img src="img/revenue1.svg" class="d-none d-lg-block img-fluid" alt="">
+                </div>
+            </div>
+        </section>
+
+        <!-- Icon blocks -->
+        <section class="container">
+                <div class="row align-items-center py-5">
+                    <div class="col-lg-4">
+                        <div class="iphone-x mb-5 mx-auto">
+                            <div class="screen" style="background-image: url(img/screenshot1.png)"></div>
+                        </div>
+                    </div>
+                    <div class="col-lg-8">
+                        <div class="row">
+                            <div class="col-sm-6 mb-4">
+                                <div class="media">
+                                    <span class="icon icon-primary mr-3">
+                                        <i class="icon-inner fas fa-award" aria-hidden="true"></i>
+                                    </span>
+                                    <div class="media-body">
+                                        <h3 class="h5 mb-2">Gamified Experience</h3>
+                                        <p>Staying motivated and patient is a key to reach your goals. We challenge you then reward you. We show you your progress to make you believe in your hidden capability.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 mb-4">
+                                <div class="media">
+                                    <span class="icon icon-success mr-3">
+                                        <i class="icon-inner fas fa-sliders-h" aria-hidden="true"></i>
+                                    </span>
+                                    <div class="media-body">
+                                        <h3 class="h5 mb-2">Personalized Experience</h3>
+                                        <p>You will start with simple phrases, then every user is graded differently based on your fluency level "pronunciation score & Rate of speech" after third step.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 mb-4">
+                                <div class="media">
+                                    <span class="icon icon-warning mr-3">
+                                        <i class="icon-inner fas fa-comments" aria-hidden="true"></i>
+                                    </span>
+                                    <div class="media-body">
+                                        <h3 class="h5 mb-2">Socialized Experience</h3>
+                                        <p>Sharing ideas and experience with fellow learners make practicing more enjoyable.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+</main>
+{% endblock %}

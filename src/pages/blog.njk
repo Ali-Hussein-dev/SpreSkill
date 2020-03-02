@@ -1,0 +1,84 @@
+{% extends "layouts/default.njk" %}
+
+{% block customMetaTags %}
+<!-- customMetaTags -->
+    <meta name="description"
+            content="SpreSkill Blog">
+    <meta name="keywords" 
+            content="Learn German, improve pronunciation, speak, mobile, speak German, pronunciation, accent reduction">
+    <meta name="robots"
+            content="INDEX,FOLLOW">
+{% endblock %}
+
+{% block content %}
+<main id="main">
+    <div class="bg-skew bg-skew-light">
+            <div class="container py-4">
+                <div class="row">
+                    <div class="col-lg-6">      <!--Start blog one-->
+                        <div class="card card-hover mb-5 mx-lg-2">
+                            <img 
+                                class="card-img-top" 
+                                src="img/blog/hard.jpg"
+                                alt="People trying to climba stack of books" 
+                                aria-hidden="true">
+                            <div class="card-body pt-5 px-5 pb-4 text-center">
+                                <h2 class="card-title mb-4">
+                                    <a class="stretched-link" 
+                                       href="articles/JL_1.html">
+                                       The Common Difficulties Of Speaking German
+                                    </a>
+                                </h2>
+                                <p class="small mb-4">
+                                    <span class="text-secondary">published on 
+                                    </span>
+                                    <span class="text-uppercase">Nov 10, 2019
+                                    </span>
+                                </p>
+                                <p class="card-text mb-4">
+                                    Learning a new language is one of the most rewarding experiences you can embark on. Not only does it expand your mind, it...
+                                </p>
+                                <a href="articles/JL_1.html"
+                                   class="d-inline-block link-cta mb-4 text-uppercase">
+                                   Continue reading &rarr;
+                                </a>
+                            </div>
+                        </div>
+                    </div>                      <!--End blog one-->
+
+                    <div class="col-lg-6">      <!--Start blog Tow-->
+                        <div class="card card-hover mb-5 mx-lg-2">
+                            <img class="card-img-top"
+                                 src="img/blog/Germany-570-420.png"
+                                 alt="" 
+                                 aria-hidden="true">
+                            <div class="card-body pt-5 px-5 pb-4 text-center">
+                                <h2 class="card-title mb-4">
+                                    <a href="articles/JL_2.html"
+                                       class="stretched-link">
+                                       Why you should learn German Language
+                                    </a>
+                                </h2>
+                                <p class="small mb-4">
+                                    <span class="text-secondary">
+                                        published on 
+                                    </span>
+                                    <span class="text-uppercase">
+                                        Nov 20, 2019
+                                    </span>
+                                </p>
+                                <p class="card-text mb-4">
+                                    This is a sample intro paragraph and can be used to introduce readers to your article. Ut enim ad 
+                                </p>
+                                <a href="articles/JL_2.html" 
+                                   class="d-inline-block link-cta mb-4 text-uppercase">
+                                   Continue reading &rarr;
+                                </a>
+                            </div>
+                        </div>
+                    </div>                      <!--End blog Two-->
+                </div>
+            </div>
+    </div><!-- end bg-skew -->
+</main>
+{% endblock %}
