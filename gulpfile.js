@@ -41,14 +41,14 @@ const   paths = {
         }
 }
 
-// Clean
-function clean(cb) {
+//Clean
+async function clean(cb) {
     return del(paths.dest)
     cb();
 }
 
 // HTML
-function html() {
+async function html() {
     return gulp
         .src(paths.html.src)
         .pipe(nunjucks({
@@ -59,9 +59,9 @@ function html() {
 }
 
 // CSS
-function css() {
+async function css() {
     var plugins = [
-        autoprefixer({browsers: ['>= 1%', 'last 1 major version', 'not dead', 'Explorer 11']}),
+        autoprefixer(),
         cssnano()
     ];
     return gulp
@@ -73,55 +73,59 @@ function css() {
         .pipe(rename({ suffix: '.min' }))
         .pipe(gulp.dest(paths.css.dest))
         .pipe(browser.stream());
+        cb();
 }
 
 // Fontawesome CSS
-function fontawesome() {
+async function fontawesome(cb) {
     return gulp
         .src(paths.fonts.css)
         .pipe(rename('fontawesome-all.min.css'))
         .pipe(gulp.dest(paths.css.dest));
+        cb();
 }
-
 // Fontawesome webfonts
-function webfonts() {
+async function webfonts(cb) {
     return gulp
         .src(paths.fonts.src)
         .pipe(gulp.dest(paths.fonts.dest));
+    cb();
 }
 
 // JS files
-function js() {
+async function js(cb) {
     return gulp
         .src([
             paths.js.jquery,
             paths.js.popper,
             paths.js.bootjs
-        ])
+        ], {allowEmpty:true})
         .pipe(gulp.dest(paths.js.dest))
         .pipe(browser.stream());
+        cb();
 }
 
 // Images
-function img() {
+async function img(cb) {
     return gulp
         .src(paths.img.src)
         .pipe(imagemin())
         .pipe(gulp.dest(paths.img.dest))
         .pipe(browser.stream());
+        cb();
 }
 
 // Watch
-function watch() {
-    gulp.watch(paths.html.watch, html);
-    gulp.watch(paths.css.src, css);
-    gulp.watch(paths.js.src, js);
-    gulp.watch(paths.img.src, img);
+async function watch() {
+return     gulp.watch(paths.html.watch, html);
+                gulp.watch(paths.css.src, css);
+                gulp.watch(paths.js.src, js);
+                gulp.watch(paths.img.src, img);
 }
 
 // Server
-function server(cb) {
-    browser.init({
+async function server(cb) {
+    return browser.init({
         server: paths.dest
     })
     cb();
@@ -132,4 +136,4 @@ exports.css = css;
 exports.img = img;
 exports.js = js;
 exports.watch = gulp.parallel(watch, server);
-exports.default = gulp.series(clean, html, gulp.parallel(css, fontawesome, webfonts, js, img), gulp.parallel(watch, server));
+exports.default = gulp.series( clean, gulp.parallel(html, css, fontawesome, webfonts, js, img), server, watch);
